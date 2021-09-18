@@ -1,0 +1,39 @@
+
+.container{
+    display:flex;
+    justify-content: space-between;
+    padding:4px;
+}
+
+.card{
+    width: 250px;
+    height: 100px;
+    background-color: rgb(236, 226, 226);
+    color: #222;
+    border-radius: 8px;
+    padding: 4px;
+    margin:7px;
+    font-family: ubuntu;
+}
+
+.cards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+ 
+.card h4{
+    text-align: center;
+}
+
+
+.form{
+    width:200px;
+    height:100vh;
+    padding:7px;
+    position:sticky;
+    top: 10px;
+    border-right: 1px solid #eee;
+    
+}

@@ -1,1 +1,20 @@
-<p>home works!</p>
+
+
+
+<section class="container">
+    <!-- forms -->
+    <article class="form">
+        <input type="text">
+        <button mat-button>Basic</button>
+    </article>
+
+
+    <!-- cards -->
+    <article class="cards">
+        <article *ngFor="let user of users" class="card">
+            <p>{{ user.id }}</p>
+            <h4>{{ user.name }}</h4>
+        </article>
+    </article>
+
+</section>
