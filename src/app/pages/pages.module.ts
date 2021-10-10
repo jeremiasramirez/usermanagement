@@ -5,6 +5,8 @@ import { StartappComponent } from './startapp/startapp.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+// import { ServiceApp } from '../services/service.app';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -14,19 +16,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HomeComponent,
     StartappComponent,
    
+    // ServiceApp
   ],
   imports: [
     CommonModule,
+    MatProgressSpinnerModule,
     BrowserModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    // ServicesModule
   ],
   exports: [
     CommonModule,
     HomeComponent,
     StartappComponent,
     MatFormFieldModule,
-    BrowserModule
+    BrowserModule,
+    MatProgressSpinnerModule
+    // ServicesModule
   
   ]
 })

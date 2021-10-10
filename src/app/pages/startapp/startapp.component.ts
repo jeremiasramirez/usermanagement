@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-startapp',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartappComponent implements OnInit {
 
-  constructor() { }
+  constructor(navigate:Router) {
+    navigate.navigate(["/home"])
+   }
 
   ngOnInit(): void {
+    
   }
 
 }
