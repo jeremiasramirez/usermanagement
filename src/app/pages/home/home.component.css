@@ -3,15 +3,65 @@
     display:flex;
     justify-content: space-between;
     padding:4px;
+    margin-top:4%;
 }
 .cards{
-    display:flex;
+    display:inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
     align-items: flex-start;
     
 
+}
+.navbar{
+    width:inherit;
+    height:70px;
+    margin:0;
+    padding-top: 20px;
+    top:.1px;
+    border-bottom-left-radius: 5px;
+    position: sticky;
+    border-bottom-right-radius: 5px;
+   
+    z-index:20;
+    background-color: rgb(19, 19, 141);
+}
+.navbar h1{
+    margin:0;
+    color:white;
+    text-align: center;
+    font-family: "ubuntu";
+}
+ .search {
+    width:inherit;
+    text-align: center;
+   
+    
+
+ }
+ .search input{
+    padding:8px;
+    text-align: center;
+    font-family: "ubuntu";
+    font-weight: 600;
+    border-radius:8px;
+     width:300px;
+     margin-top:10px;
+     border:none;
+ }
+.animate{
+    animation: animates .6s ease-in-out;
+    transition:1s;
+}
+@keyframes animates {
+    from{
+        opacity:0;
+      
+    }
+    to{
+        opacity:1;
+        
+    }
 }
 .card{
     width: 250px;
@@ -57,12 +107,10 @@
     width:200px;
     height:100vh;
     padding:7px;
-
-    background-color: rgba(238, 236, 236, 0.301);
+    background-color: rgba(238%, 236%, 236%, 10);
     position:sticky;
-    top: 4px;
+    top: .2px;
     border-right: 1px solid #eee;
-    
 }
 
  
@@ -76,10 +124,12 @@
 }
 
 .container__loading{
-    margin-top:4px;
-    position:absolute;
-    top:0;
-    z-index:10;
+    /* margin-top:75px; */
+    position:sticky;
+    top:10;
+    z-index:30;
+    width: 100px;
+    height: 100px;
     background-color:white;
     border-radius: 50%;
     background-color: rgba(161, 180, 165, 0.7);

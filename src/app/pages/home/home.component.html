@@ -1,32 +1,49 @@
 
+<nav class="navbar" >
 
-<section class="container__loading" *ngIf="isLoading">
-    <mat-spinner color="light"></mat-spinner>
-</section>
+    <h1 class="animate">CRUD</h1>
+
+    <div class="search">
+        <input type="search" class=" animate" placeholder="Search">
+    </div>
  
+</nav>
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+ 
+
 <section class="container">
     <!-- forms -->
+ 
+   
     <article class="form">
-        <input type="text" #e placeholder="Name" value={{name}}>
-        <input type="email" #em   placeholder="Email" value={{email}}>
+      
+        <input class="animate" type="text" #e placeholder="Name" value={{name}}>
+        <input class="animate" type="email" #em   placeholder="Email" value={{email}}>
         <div class="container__buttons">
-            <button mat-raised-button color="primary" (click)="add(e.value,em.value)" *ngIf="!id">Add</button>
-            <button  mat-flat-button  color="accent" (click)="update()" *ngIf="id">Update</button>
-            <button mat-button color="primary" *ngIf="id" (click)="reset()">Reset</button>
-            <button mat-button color="warn" *ngIf="id" (click)="deleteUser()">Delete</button>
+            <button class="animate" mat-raised-button color="primary" (click)="add(e.value,em.value)" *ngIf="!id">Add</button>
+            <button class="animate" mat-flat-button  color="accent" (click)="update()" *ngIf="id">Update</button>
+            <button class="animate" mat-button color="primary" *ngIf="id" (click)="reset()">Reset</button>
+            <button class="animate" mat-button color="warn" *ngIf="id" (click)="deleteUser()">Delete</button>
         </div>
 
     </article>
 
 
     <!-- cards -->
+ 
     <article class="cards">
-        <article *ngFor="let user of users; let index=index" class="card" (click)="getInfoFromCard(user,index)">
+    
+        <article *ngFor="let user of users; let index=index" class="card animate" (click)="getInfoFromCard(user,index)">
             <p>{{ user.id }}</p>
             <h4>{{ user.name }}</h4>
             <small>{{user.email}}</small>
              
         </article>
-    </article>
 
+
+    
+    </article>
+    <div class="cards animate" *ngIf="users.length==0" >
+        <article  class="card" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"  style="height:160px; width:210px;background-color:#eee;"></article>
+       </div>
 </section>

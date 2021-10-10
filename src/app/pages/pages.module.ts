@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 // import { ServiceApp } from '../services/service.app';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 
@@ -25,6 +26,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatButtonModule,
     MatFormFieldModule,
     // ServicesModule
+    MatProgressBarModule
   ],
   exports: [
     CommonModule,
@@ -32,8 +34,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     StartappComponent,
     MatFormFieldModule,
     BrowserModule,
-    MatProgressSpinnerModule
-    // ServicesModule
+    MatProgressSpinnerModule,
+    // ServicesModule,
+    MatProgressBarModule
   
   ]
 })
