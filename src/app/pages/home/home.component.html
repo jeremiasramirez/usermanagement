@@ -8,9 +8,10 @@
     </div>
  
 </nav>
+
 <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
  
-
+ 
 <section class="container">
     <!-- forms -->
  
@@ -21,7 +22,7 @@
         <input class="animate" type="email" #em   placeholder="Email" value={{email}}>
         <div class="container__buttons">
             <button class="animate" mat-raised-button color="primary" (click)="add(e.value,em.value)" *ngIf="!id">Add</button>
-            <button class="animate" mat-flat-button  color="accent" (click)="update()" *ngIf="id">Update</button>
+            <button class="animate" mat-flat-button  color="accent" (click)="update(e.value,em.value)" *ngIf="id">Update</button>
             <button class="animate" mat-button color="primary" *ngIf="id" (click)="reset()">Reset</button>
             <button class="animate" mat-button color="warn" *ngIf="id" (click)="deleteUser()">Delete</button>
         </div>
@@ -43,7 +44,7 @@
 
     
     </article>
-    <div class="cards animate" *ngIf="users.length==0" >
-        <article  class="card" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"  style="height:160px; width:210px;background-color:#eee;"></article>
-       </div>
+    <!-- <div class="cards__fake animate" *ngIf="users.length==0" >
+        <article  class="card__fake" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"  style="height:160px; width:210px;background-color:#eee;"></article>
+       </div> -->
 </section>

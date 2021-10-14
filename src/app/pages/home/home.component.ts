@@ -37,8 +37,12 @@ export class HomeComponent implements OnInit {
       })
     }
   }
-  update():void{
-  
+  update(name:string,email:string):void{
+    this.serviceApp.updateUser(this.id,name,email).then((value)=>{
+      this.getData();
+      this.reset();
+      console.log("value updated" )
+    }) 
   }
 
   deleteUser():void{
@@ -58,9 +62,7 @@ export class HomeComponent implements OnInit {
     this.posElement=0;
   
   }
-  updateFromCard():void{
-    // ajax.s
-  }
+ 
 
   getInfoFromCard(user:{id:number,name:string,email:string},index:number):void{
     this.id= user.id;
@@ -78,8 +80,16 @@ export class HomeComponent implements OnInit {
   getData(){
     this.isLoading=true;
     this.serviceApp.getUsers().then((data:any)=>{
-      this.isLoading=false;
-      if(data.length) this.users = data
+     
+      if(data.length >= 1) {
+        this.users = data
+         this.isLoading=false;
+      }
+      else{
+        this.isLoading=false;
+      }
+      
+      
       console.log(this.users)
     })
   }
@@ -122,6 +132,14 @@ class  ServicesApp{
   async addUser(name:string,email:string){
     return new Promise((resolve)=>{
       ajax.post(`https://restuserswithng.herokuapp.com/users/add/${name}/${email}`).subscribe((data)=>{
+        resolve(data.response)
+      })
+    });
+  }
+
+  async updateUser(id:number,name:string,email:string){
+    return new Promise((resolve)=>{
+      ajax.post(`https://restuserswithng.herokuapp.com/users/update/${id}/${name}/${email}`).subscribe((data)=>{
         resolve(data.response)
       })
     });
